@@ -26,8 +26,10 @@ try:
         print('Bom dia')
     elif (hora >= 12 and hora <= 17):
         print('Boa tarde')
-    else:
+    elif (hora > 18 and hora <= 23):
         print('Boa noite')
+    else:
+        print('Não conheço essa hora')
 except:
     print('Não é um número')
 """
