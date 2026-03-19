@@ -7,5 +7,7 @@ Fatiamento [i:f:p] [::]
 Obs.: a função len retorna a qtd 
 de caracteres da str
 """
-variavel = 'Olá mundo'
-print(variavel[::-1])
+variavel = '00975833081'
+#print(variavel[::-1])
+variavel = variavel[:9]
+print(variavel)
