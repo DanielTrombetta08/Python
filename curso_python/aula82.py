@@ -1,36 +1,34 @@
-# Sets - Conjuntos em Python (tipo set)
-# Conjuntos são ensinados na matemática
-# https://brasilescola.uol.com.br/matematica/conjunto.htm
-# Representados graficamente pelo diagrama de Venn
-# Sets em Python são mutáveis, porém aceitam apenas
-# tipos imutáveis como valor interno.
+def executa(funcao, *args):
+    return funcao(*args)
 
-# Criando um set
-# set(iterável) ou {1, 2, 3}
-# s1 = set('Luiz')
-# s1 = set()  # vazio
-# s1 = {'Luiz', 1, 2, 3}  # com dados
 
-# Sets são eficientes para remover valores duplicados
-# de iteráveis.
-# - Seus valores serão sempre únicos;
-# - Não aceitam valores mutáveis;
-# - não tem índexes;
-# - não garantem ordem;
-# - são iteráveis (for, in, not in)
-# l1 = [1, 2, 3, 3, 3, 3, 3, 1]
-# s1 = set(l1)
-# l2 = list(s1)
-# s1 = {1, 2, 3}
-# print(3 not in s1)
-# for numero in s1:
-#     print(numero)
+# def soma(x, y):
+#     return x + y
 
-# Métodos úteis:
-# add, update, clear, discard
 
-# Operadores úteis:
-# união | união (union) - Une
-# intersecção & (intersection) - Itens presentes em ambos
-# diferença - Itens presentes apenas no set da esquerda
-# diferença simétrica ^ - Itens que não estão em ambos
+# def cria_multiplicador(multiplicador):
+#     def multiplica(numero):
+#         return numero * multiplicador
+#     return multiplica
+
+
+# duplica = cria_multiplicador(2)
+duplica = executa(
+    lambda m: lambda n: n * m,
+    2
+)
+print(duplica(2))
+
+print(
+    executa(
+        lambda x, y: x + y,
+        2, 3
+    ),
+)
+
+print(
+    executa(
+        lambda *args: sum(args),
+        1, 2, 3, 4, 5, 6, 7
+    )
+)

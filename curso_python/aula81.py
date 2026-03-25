@@ -1,58 +1,36 @@
-# Exercício - sistema de perguntas e respostas
-
-
-perguntas = [
-    {
-        'Pergunta': 'Quanto é 2+2?',
-        'Opções': ['1', '3', '4', '5'],
-        'Resposta': '4',
-    },
-    {
-        'Pergunta': 'Quanto é 5*5?',
-        'Opções': ['25', '55', '10', '51'],
-        'Resposta': '25',
-    },
-    {
-        'Pergunta': 'Quanto é 10/2?',
-        'Opções': ['4', '5', '2', '1'],
-        'Resposta': '5',
-    },
+# Introdução à função lambda (função anônima de uma linha)
+# A função lambda é uma função como qualquer
+# outra em Python. Porém, são funções anônimas
+# que contém apenas uma linha. Ou seja, tudo
+# deve ser contido dentro de uma única
+# expressão.
+# lista = [
+#     {'nome': 'Luiz', 'sobrenome': 'miranda'},
+#     {'nome': 'Maria', 'sobrenome': 'Oliveira'},
+#     {'nome': 'Daniel', 'sobrenome': 'Silva'},
+#     {'nome': 'Eduardo', 'sobrenome': 'Moreira'},
+#     {'nome': 'Aline', 'sobrenome': 'Souza'},
+# ]
+# lista = [4, 32, 1, 34, 5, 6, 6, 21, ]
+# lista.sort(reverse=True)
+# sorted(lista)
+lista = [
+    {'nome': 'Luiz', 'sobrenome': 'miranda'},
+    {'nome': 'Maria', 'sobrenome': 'Oliveira'},
+    {'nome': 'Daniel', 'sobrenome': 'Silva'},
+    {'nome': 'Eduardo', 'sobrenome': 'Moreira'},
+    {'nome': 'Aline', 'sobrenome': 'Souza'},
 ]
 
-qtd_acertos = 0
-for pergunta in perguntas:
-    print('Pergunta:', pergunta['Pergunta'])
-    print()
 
-    opcoes = pergunta['Opções']
-    for i, opcao in enumerate(opcoes):
-        print(f'{i})', opcao)
-    print()
-
-    escolha = input('Escolha uma opção: ')
-
-    acertou = False
-    escolha_int = None
-    qtd_opcoes = len(opcoes)
-
-    if escolha.isdigit():
-        escolha_int = int(escolha)
-
-    if escolha_int is not None:
-        if escolha_int >= 0 and escolha_int < qtd_opcoes:
-            if opcoes[escolha_int] == pergunta['Resposta']:
-                print(opcoes[escolha_int] , pergunta['Resposta'])
-                acertou = True
-
-    print()
-    if acertou:
-        qtd_acertos += 1
-        print('Acertou 👍')
-    else:
-        print('Errou ❌')
-
+def exibir(lista):
+    for item in lista:
+        print(item)
     print()
 
 
-print('Você acertou', qtd_acertos)
-print('de', len(perguntas), 'perguntas.')
+l1 = sorted(lista, key=lambda item: item['nome'])
+l2 = sorted(lista, key=lambda item: item['sobrenome'])
+
+exibir(l1)
+exibir(l2)
