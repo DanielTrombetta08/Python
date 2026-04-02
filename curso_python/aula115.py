@@ -8,3 +8,10 @@
 # Você pode dar o nome que preferir para um
 # ambiente virtual, mas os mais comuns são:
 # venv env .venv .env
+
+# python -m venv .venv
+# venv\Scripts\activate
+# python.exe -m pip install --upgrade pip
+# pip freeze
+# pip freeze > requirements.txt
+# pip install -r .\requirements.txt
